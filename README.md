@@ -1,29 +1,9 @@
 # more-form
 
-## Project setup
-```
-npm install
-```
+## 实例   
+在input中输入，过1s后才显示输入值，渲染数据过多出现卡顿情况     
+![Image text](http://ps5shq58f.bkt.clouddn.com/form-ori.gif)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 优化后
+Vue.prototype._update中的this.$el是从组件的根部遍历开始的，解决办法是缩小当前组件绑定的数据量，拆分组件   
+![Image text](http://ps5shq58f.bkt.clouddn.com/form-ref.gif)
